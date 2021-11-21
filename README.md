@@ -1,1 +1,1 @@
-# App-Fullstack
+Este será mi proyecto solitario como desarrollador.
