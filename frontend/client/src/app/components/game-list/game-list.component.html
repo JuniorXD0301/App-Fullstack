@@ -1,0 +1,13 @@
+<div class="container" *ngFor="let game of games">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{game.image}} " alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{game.title}} </h5>
+      <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+    </div>
+    <div class="card-body">
+      <p>{{game.description}} </p>
+      <a href="#" class="btn btn-primary">Editar</a>
+    </div>
+  </div>
+</div>

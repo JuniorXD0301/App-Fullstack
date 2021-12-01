@@ -7,6 +7,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { GameFormComponent } from './components/game-form/game-form.component';
 import { GameListComponent } from './components/game-list/game-list.component';
 import { GameServiceService } from './services/game-service.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { GameServiceService } from './services/game-service.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [GameServiceService],
   bootstrap: [AppComponent]
