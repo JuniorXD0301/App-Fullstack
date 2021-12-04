@@ -4,30 +4,33 @@ import { GameServiceService } from 'src/app/services/game-service.service';
 @Component({
   selector: 'app-game-list',
   templateUrl: './game-list.component.html',
-  styleUrls: ['./game-list.component.css']
+  styleUrls: ['./game-list.component.css'],
 })
 export class GameListComponent implements OnInit {
-
-
   games: any = [];
 
-  constructor(private gameService: GameServiceService ) { }
+  constructor(private gameService: GameServiceService) {}
 
   ngOnInit(): void {
+    this.getGames();
+  }
+
+  getGames() {
     this.gameService.getGames().subscribe(
-      res => {
+      (res) => {
         this.games = res;
       },
-      er => console.error(er),
+      (err) => console.log(err)
     );
   }
 
-  deleteGame(id: string){
+  deleteGame(id: string) {
     this.gameService.deleteGame(id).subscribe(
-      res => {
-        console.log(res)
+      (res) => {
+        console.log(res);
+        this.getGames();
       },
-      err => console.log(err)
-    )
+      (err) => console.log(err)
+    );
   }
 }

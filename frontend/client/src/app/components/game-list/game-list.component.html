@@ -4,11 +4,15 @@
       <img class="card-img-top" src="{{ game.image }} " alt="Card image cap" />
       <div class="card-body">
         <h5 class="card-title">{{ game.title }}</h5>
-        <button class="btn btn-danger" (click)="deleteGame(game.id)"><i class="fas fa-trash"></i></button>
+        <button class="btn btn-danger" (click)="deleteGame(game.id)">
+          <i class="fas fa-trash"></i>
+        </button>
       </div>
       <div class="card-body">
         <p>{{ game.description }}</p>
-        <a href="#" class="btn btn-primary">Editar</a>
+        <a [routerLink]="['/games/edit', game.id]" class="btn btn-primary"
+          >Editar</a
+        >
       </div>
     </div>
   </div>
